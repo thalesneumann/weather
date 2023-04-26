@@ -1,13 +1,6 @@
-/*
-function mario(){ // AINDA NAO FOI CHAMADA
-    console.log('to aqui dentro')
-}
-mario() // assim que eu chamo a função 
-*/
-
 let chave = "1c5290d7373be124ad3a22f111d0ed76"
 
-function colocarNaTela(dados){
+const colocarNaTela = (dados)=>{
     console.log(dados)
 
     document.querySelector(".cidade").innerHTML = "Tempo em " + dados.name
@@ -19,7 +12,7 @@ function colocarNaTela(dados){
 
 
 
-async /*avisar q vai acessar um serivdor*/ function buscarCidade(cidade){
+async function buscarCidade(cidade){
     let dados = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + 
     cidade + 
     "&appid=" +
@@ -34,7 +27,9 @@ async /*avisar q vai acessar um serivdor*/ function buscarCidade(cidade){
 
 }
 
-function cliqueiNoBotao(){
+
+
+const cliqueiNoBotao= ()=>{
     let cidade = document.querySelector(".input-cidade").value
 
     buscarCidade(cidade)
